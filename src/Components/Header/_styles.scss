@@ -1,0 +1,69 @@
+.header {
+  width: 100%;
+  height: 10rem;
+  background-color: #fff;
+  &__nav {
+    @include flexrow(space-between);
+
+    height: 100%;
+
+    &_list {
+      @include flexrow(space-between);
+      padding-left: 15rem;
+
+      li {
+        padding: 4rem 0;
+      }
+    }
+    &_items {
+      padding-left: 7rem;
+    }
+
+    &_search {
+      form {
+        position: relative;
+        display: flex;
+        max-width: 20rem;
+      }
+      input {
+        border: 1px solid rgb(238, 238, 238);
+        border-radius: 30px;
+        padding: 10px 40px 10px 20px;
+        width: 100%;
+        outline: none;
+      }
+      i {
+        position: absolute;
+        top: 50%;
+        right: 5%;
+        transform: translateY(-40%);
+      }
+    }
+  }
+}
+
+.header ul > li:hover > ul.submenu {
+  display: block;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 95%;
+  background-color: #fff;
+  border-top: 5px solid red;
+  box-shadow: 2px 2px 5px rgb(155, 148, 148);
+  li {
+    margin-top: 1rem;
+    padding: 0 2rem;
+    &:last-child {
+      padding-bottom: 1rem;
+    }
+  }
+}
+
+.outsizeicon {
+  padding: 1rem;
+  border-radius: 50%;
+  border: 1px solid grey;
+}
