@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Paper from "@material-ui/core/Paper";
 import Badge from "@material-ui/core/Badge";
 import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutlined";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
+import MenuOutlinedIcon from "@material-ui/icons/MenuOutlined";
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
-import { Button, Box } from "@material-ui/core";
+import { Button, IconButton, Typography } from "@material-ui/core";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
+  const [isActiveMenu, setIsActiveMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setIsActiveMenu(!isActiveMenu);
+  };
+
   return (
     <Paper elevation={3}>
       <div className="container-fluid header">
@@ -107,8 +114,30 @@ const Header = () => {
                   </NavLink>
                 </div>
               </li>
-              <li className="header__nav_button">
+              <li className="d-none d-lg-block header__nav_button">
                 <Button variant="contained">Sign in</Button>
+              </li>
+              <li className="mobile_button d-lg-none">
+                <IconButton onClick={toggleMenu}>
+                  <MenuOutlinedIcon />
+                </IconButton>
+              </li>
+            </ul>
+          </div>
+          <div
+            className={
+              isActiveMenu
+                ? "nav_mobile d-lg-blcok"
+                : "nav_mobile d-sm-none togglemenu"
+            }
+          >
+            <ul className="nav_list">
+              <li>Sign in</li>
+              <li>About</li>
+              <li>Contact</li>
+              <li>Cart</li>
+              <li className="nav_close" onClick={toggleMenu}>
+                x
               </li>
             </ul>
           </div>
