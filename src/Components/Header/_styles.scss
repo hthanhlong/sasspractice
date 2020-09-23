@@ -2,10 +2,19 @@
   width: 100%;
   height: 10rem;
   background-color: #fff;
+  @media #{$xs} {
+    height: 6rem;
+  }
   &__nav {
     @include flexrow(space-between);
-
     height: 100%;
+    display: flex;
+
+    &_logo h1 {
+      @media #{$xs_mobile} {
+        font-size: 1.6rem;
+      }
+    }
 
     &_list {
       @include flexrow(space-between);
@@ -15,11 +24,8 @@
         padding: 4rem 0;
       }
     }
-    &_items {
-      padding-left: 7rem;
-    }
 
-    &_search {
+    &_items {
       form {
         position: relative;
         display: flex;
@@ -37,6 +43,28 @@
         top: 50%;
         right: 5%;
         transform: translateY(-40%);
+      }
+    }
+
+    &_cart {
+      @media #{$xs} {
+        margin-left: auto;
+      }
+    }
+    &_button {
+      @media #{$xs} {
+        margin-left: 3rem;
+      }
+      & .MuiButtonBase-root {
+        background-color: blue;
+        color: white;
+        outline: none;
+        height: 4rem;
+        width: 10rem;
+        &:hover {
+          background-color: blue;
+          transform: translateY(-2px);
+        }
       }
     }
   }
@@ -63,7 +91,9 @@
 }
 
 .outsizeicon {
-  padding: 1rem;
-  border-radius: 50%;
-  border: 1px solid grey;
+  @media #{$xs2} {
+    padding: 1rem;
+    border-radius: 50%;
+    border: 1px solid grey;
+  }
 }

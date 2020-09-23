@@ -4,7 +4,7 @@ import Badge from "@material-ui/core/Badge";
 import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutlined";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
-import { Button } from "@material-ui/core";
+import { Button, Box } from "@material-ui/core";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
@@ -13,13 +13,13 @@ const Header = () => {
       <div className="container-fluid header">
         <nav className="row header__nav">
           <div className="col-3 col-sm-1 col-md-1 col-lg-1 col-lg-1">
-            <span className="header__nav_log">
+            <span className="header__nav_logo">
               <a href="#">
                 <h1>MyShop.</h1>
               </a>
             </span>
           </div>
-          <div className="col-sm-7 col-md-7 col-lg-7 col-xl-6">
+          <div className="d-none d-lg-block col-lg-6 col-xl-6">
             <ul className="header__nav_list">
               <li>
                 <a href="">Home</a>
@@ -62,7 +62,7 @@ const Header = () => {
                     <a href="">Shopping Cart</a>
                   </li>
                   <li>
-                    <a href="checkout.html">Product Checkout</a>
+                    <a href="">Product Checkout</a>
                   </li>
                 </ul>
               </li>
@@ -71,9 +71,9 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <div className="col-sm-4 col-md-4 col-lg-4 col-xl-5">
+          <div className="col-9 col-sm- col-md-8 col-lg-5 col-xl-5">
             <ul className="d-flex justify-content-between align-items-center header__nav_items">
-              <li className="header__nav_search">
+              <li className="d-none d-md-block">
                 <form>
                   <input
                     type="text"
@@ -91,24 +91,24 @@ const Header = () => {
                 <div className="outsizeicon">
                   <NavLink to="/">
                     <Badge badgeContent={2} color="secondary">
-                      <ShoppingCartOutlinedIcon fontSize="large" />
+                      <ShoppingCartOutlinedIcon style={{ fontSize: "24px" }} />
                     </Badge>
                   </NavLink>
                 </div>
               </li>
-              <li className="header_nav_heart">
+              <li className="d-none d-md-block header_nav_heart">
                 <div className="outsizeicon">
                   <NavLink to="/">
                     <Badge badgeContent={2} color="secondary">
-                      <FavoriteBorderOutlinedIcon fontSize="large" />
+                      <FavoriteBorderOutlinedIcon
+                        style={{ fontSize: "24px" }}
+                      />
                     </Badge>
                   </NavLink>
                 </div>
               </li>
-              <li>
-                <Button variant="contained" color="secondary">
-                  Sign in
-                </Button>
+              <li className="header__nav_button">
+                <Button variant="contained">Sign in</Button>
               </li>
             </ul>
           </div>

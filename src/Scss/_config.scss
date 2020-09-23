@@ -22,10 +22,11 @@ ul {
 }
 
 a {
-  color: $text-color;
+  color: black;
 }
+
 a:hover {
-  color: $text-secondary;
+  color: $btn_hover;
 }
 a:focus,
 a:hover,
