@@ -3,6 +3,9 @@ import { Badge, Button, Divider } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import StarIcon from "@material-ui/icons/Star";
 import StarHalfIcon from "@material-ui/icons/StarHalf";
+import RedeemIcon from "@material-ui/icons/Redeem";
+import LockOpenIcon from "@material-ui/icons/LockOpen";
+import AutorenewIcon from "@material-ui/icons/Autorenew";
 
 const Home = () => {
   return (
@@ -215,17 +218,130 @@ const Home = () => {
                 <img src="assets/img/categori/card-man.png" />
               </div>
             </div>
-            <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+            <div className="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7">
               <div className="bestproduct_content">
                 <h1>Find The Best Product from Our Shop</h1>
                 <p>Designers who are interesten creating state ofthe.</p>
                 <div>
                   <Button>Shop Now</Button>
                 </div>
+                <div className="bestproduct_icon">
+                  <img src="assets/img/categori/card-shape.png" />
+                </div>
               </div>
             </div>
-            <div className="bestproduct_icon">
-              <img src="assets/img/categori/card-shape.png" />
+          </div>
+        </div>
+      </section>
+      <section className="container">
+        <div className="bestcollection__background">
+          <div className="row">
+            <div className="d-none d-lg-block col-lg-5 col-xl-5">
+              <div className="bestcollection__title">
+                <div className="bestcollection__title_one">
+                  <h1>
+                    Best Collection <br /> of This Month
+                  </h1>
+                  <p>Designers who are interesten crea.</p>
+                  <span>
+                    <Button variant="contained" color="secondary">
+                      Shop Now
+                    </Button>
+                  </span>
+                </div>
+                <img src="assets/img/collection/collection1.png" />
+              </div>
+            </div>
+            <div className="d-none d-lg-block col-lg-4 col-xl-4">
+              <div className="bestcollection__img">
+                <img src="assets/img/collection/collection2.png" />
+              </div>
+            </div>
+            <div className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-3">
+              <div className="bestcollection__category">
+                <div className="bestcollection__category_title">
+                  <h2>Menz Winter Jacket</h2>
+                </div>
+                <img
+                  src="assets/img/collection/collection3.png"
+                  className="bestcollection__category_img"
+                />
+              </div>
+              <div className="bestcollection__category">
+                <div className="bestcollection__category_title two">
+                  <h2>Menz Winter Jacket</h2>
+                </div>
+                <img
+                  src="assets/img/collection/collection4.png"
+                  className="bestcollection__category_img"
+                />
+              </div>
+              <div className="bestcollection__category">
+                <div className="bestcollection__category_title">
+                  <h2>Menz Winter Jacket</h2>
+                </div>
+                <img
+                  src="assets/img/collection/collection5.png"
+                  className="bestcollection__category_img"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="container">
+        <div className="row lastestoffer">
+          <div className="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+            <div className="lastestoffer__title">
+              <h1>
+                Get Our <br /> Latest Offers News
+              </h1>
+              <p>Subscribe news latter</p>
+            </div>
+          </div>
+          <div className="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+            <div className="lastestoffer__text">
+              <input name="name" type="text" placeholder="Get your email" />
+              <Button variant="contained" color="primary">
+                Get your email
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="container">
+        <div className="row promotion">
+          <div className="col-12 col-sm-6 col-6 col-lg-4 col-xl-4">
+            <div className="promotion__content">
+              <span className="promotion__content_icon">
+                <RedeemIcon fontSize="large" />
+              </span>
+              <div className="promotion__content_title">
+                <h1>Free Shipping Method</h1>
+                <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-12 col-sm-6 col-6 col-lg-4 col-xl-4">
+            <div className="promotion__content">
+              <span className="promotion__content_icon">
+                <RedeemIcon fontSize="large" />
+              </span>
+              <div className="promotion__content_title">
+                <h1>Free Shipping Method</h1>
+                <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-12 col-sm-6 col-6 col-lg-4 col-xl-4">
+            <div className="promotion__content">
+              <span className="promotion__content_icon">
+                <RedeemIcon fontSize="large" />
+              </span>
+              <div className="promotion__content_title">
+                <h1>Free Shipping Method</h1>
+                <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+              </div>
             </div>
           </div>
         </div>
