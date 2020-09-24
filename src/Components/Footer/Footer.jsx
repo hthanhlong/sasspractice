@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -6,9 +7,9 @@ const Footer = () => {
       <div className="row footer_area">
         <div className="col-xl-3 col-lg-3 col-md-5 col-sm-6">
           <div className="footer-logo">
-            <a href="index.html">
+            <Link to="index.html">
               <img src="assets/img/logo/logo2_footer.png" alt="" />
-            </a>
+            </Link>
           </div>
           <div className="footer-title">
             <div className="footer-pera">
@@ -24,16 +25,16 @@ const Footer = () => {
             <h4>Quick Links</h4>
             <ul>
               <li>
-                <a href="#">About</a>
+                <Link to="#">About</Link>
               </li>
               <li>
-                <a href="#"> Offers & Discounts</a>
+                <Link to="#"> Offers & Discounts</Link>
               </li>
               <li>
-                <a href="#"> Get Coupon</a>
+                <Link to="#"> Get Coupon</Link>
               </li>
               <li>
-                <a href="#"> Contact Us</a>
+                <Link to="#"> Contact Us</Link>
               </li>
             </ul>
           </div>
@@ -44,16 +45,16 @@ const Footer = () => {
               <h4>New Products</h4>
               <ul>
                 <li>
-                  <a href="#">Woman Cloth</a>
+                  <Link to="#">Woman Cloth</Link>
                 </li>
                 <li>
-                  <a href="#">Fashion Accessories</a>
+                  <Link to="#">Fashion Accessories</Link>
                 </li>
                 <li>
-                  <a href="#"> Man Accessories</a>
+                  <Link to="#"> Man Accessories</Link>
                 </li>
                 <li>
-                  <a href="#"> Rubber made Toys</a>
+                  <Link to="#"> Rubber made Toys</Link>
                 </li>
               </ul>
             </div>
@@ -64,19 +65,19 @@ const Footer = () => {
             <h4>Support</h4>
             <ul>
               <li>
-                <a href="#">Frequently Asked Questions</a>
+                <Link to="#">Frequently Asked Questions</Link>
               </li>
               <li>
-                <a href="#">Terms & Conditions</a>
+                <Link to="#">Terms & Conditions</Link>
               </li>
               <li>
-                <a href="#">Privacy Policy</a>
+                <Link to="#">Privacy Policy</Link>
               </li>
               <li>
-                <a href="#">Privacy Policy</a>
+                <Link to="#">Privacy Policy</Link>
               </li>
               <li>
-                <a href="#">Report a Payment Issue</a>
+                <Link to="#">Report a Payment Issue</Link>
               </li>
             </ul>
           </div>

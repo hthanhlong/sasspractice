@@ -18,12 +18,11 @@
     flex-direction: column;
     justify-content: space-between;
     margin-top: 20%;
-
     .MuiButtonBase-root {
       transition: all 0.4s ease;
       &:hover {
-        transform: translateY(-10px);
         color: red;
+        transform: translateY(-10px);
         background-color: lightcyan;
       }
     }

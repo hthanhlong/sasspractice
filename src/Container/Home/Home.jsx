@@ -15,7 +15,7 @@ const Home = () => {
           <div className="home__content d-flex justify-content-center">
             <div className="col-xl-6 col-lg-6">
               <div className="d-none d-lg-block home__img">
-                <img src="/assets/img/hero/hero_man.png"></img>
+                <img alt="" src="/assets/img/hero/hero_man.png" />
               </div>
             </div>
             <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
@@ -26,7 +26,7 @@ const Home = () => {
                   Collection
                 </h1>
                 <h3>Best Cloth Collection by 2020!</h3>
-                <Link>
+                <Link to="/">
                   <Button variant="contained" color="primary">
                     Shop Now
                   </Button>
@@ -47,12 +47,13 @@ const Home = () => {
                 <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
                   <div className="category__content_card">
                     <img
+                      alt=""
                       className="card_img"
                       src="/assets/img/categori/cat1.jpg"
                     />
                     <div className="card_text">
                       <h2>Owmen'S</h2>
-                      <Link>
+                      <Link to="/">
                         <div>Best New Deals</div>
                       </Link>
                       <span>New Collection</span>
@@ -62,13 +63,14 @@ const Home = () => {
                 <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
                   <div className="category__content_card">
                     <img
+                      alt=""
                       className="card_img"
                       src="assets/img/categori/cat2.jpg"
                     />
                     <div className="card_text">
                       <h2>Winter</h2>
 
-                      <Link>
+                      <Link to="/">
                         <div>Best New Deals </div>
                       </Link>
                       <span>New Collection</span>
@@ -79,11 +81,12 @@ const Home = () => {
                   <div className="category__content_card">
                     <img
                       className="card_img"
+                      alt=""
                       src="/assets/img/categori/cat3.jpg"
                     />
                     <div className="card_text">
                       <h2>Man'S</h2>
-                      <Link>
+                      <Link to="/">
                         <div>Best New Deals </div>
                       </Link>
                       <span>New Collection</span>
@@ -101,13 +104,13 @@ const Home = () => {
             <h1>Products Lastest</h1>
             <ul>
               <li>
-                <Link>Lastest</Link>
+                <Link to="/">Lastest</Link>
               </li>
               <li>
-                <Link>All</Link>
+                <Link to="/">All</Link>
               </li>
               <li>
-                <Link>New</Link>
+                <Link to="/">New</Link>
               </li>
             </ul>
           </div>
@@ -117,7 +120,7 @@ const Home = () => {
               <div className="product">
                 <div className="product_img">
                   <Badge color="secondary" badgeContent="NEW">
-                    <img src="assets/img/categori/product1.png" />
+                    <img alt="" src="assets/img/categori/product1.png" />
                   </Badge>
                 </div>
                 <ul className="product__content">
@@ -141,7 +144,7 @@ const Home = () => {
             <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
               <div className="product">
                 <div className="product_img">
-                  <img src="assets/img/categori/product1.png" />
+                  <img alt="" src="assets/img/categori/product1.png" />
                 </div>
                 <ul className="product__content">
                   <li className="product__star">
@@ -164,7 +167,7 @@ const Home = () => {
             <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
               <div className="product">
                 <div className="product_img">
-                  <img src="assets/img/categori/product1.png" />
+                  <img alt="" src="assets/img/categori/product1.png" />
                 </div>
                 <ul className="product__content">
                   <li className="product__star">
@@ -187,7 +190,7 @@ const Home = () => {
             <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
               <div className="product">
                 <div className="product_img">
-                  <img src="assets/img/categori/product1.png" />
+                  <img alt="" src="assets/img/categori/product1.png" />
                 </div>
                 <ul className="product__content">
                   <li className="product__star">
@@ -215,7 +218,7 @@ const Home = () => {
           <div className="row">
             <div className="d-none d-lg-block col-lg-5 col-xl-5">
               <div className="bestproduct_img">
-                <img src="assets/img/categori/card-man.png" />
+                <img alt="" src="assets/img/categori/card-man.png" />
               </div>
             </div>
             <div className="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7">
@@ -226,7 +229,7 @@ const Home = () => {
                   <Button>Shop Now</Button>
                 </div>
                 <div className="bestproduct_icon">
-                  <img src="assets/img/categori/card-shape.png" />
+                  <img alt="" src="assets/img/categori/card-shape.png" />
                 </div>
               </div>
             </div>
@@ -249,12 +252,12 @@ const Home = () => {
                     </Button>
                   </span>
                 </div>
-                <img src="assets/img/collection/collection1.png" />
+                <img alt="" src="assets/img/collection/collection1.png" />
               </div>
             </div>
             <div className="d-none d-lg-block col-lg-4 col-xl-4">
               <div className="bestcollection__img">
-                <img src="assets/img/collection/collection2.png" />
+                <img alt="" src="assets/img/collection/collection2.png" />
               </div>
             </div>
             <div className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-3">
@@ -263,6 +266,7 @@ const Home = () => {
                   <h2>Menz Winter Jacket</h2>
                 </div>
                 <img
+                  alt=""
                   src="assets/img/collection/collection3.png"
                   className="bestcollection__category_img"
                 />
@@ -272,6 +276,7 @@ const Home = () => {
                   <h2>Menz Winter Jacket</h2>
                 </div>
                 <img
+                  alt=""
                   src="assets/img/collection/collection4.png"
                   className="bestcollection__category_img"
                 />
@@ -281,6 +286,7 @@ const Home = () => {
                   <h2>Menz Winter Jacket</h2>
                 </div>
                 <img
+                  alt=""
                   src="assets/img/collection/collection5.png"
                   className="bestcollection__category_img"
                 />
@@ -325,7 +331,7 @@ const Home = () => {
           <div className="col-12 col-sm-6 col-6 col-lg-4 col-xl-4">
             <div className="promotion__content">
               <span className="promotion__content_icon">
-                <RedeemIcon fontSize="large" />
+                <LockOpenIcon fontSize="large" />
               </span>
               <div className="promotion__content_title">
                 <h1>Free Shipping Method</h1>
@@ -336,7 +342,7 @@ const Home = () => {
           <div className="col-12 col-sm-6 col-6 col-lg-4 col-xl-4">
             <div className="promotion__content">
               <span className="promotion__content_icon">
-                <RedeemIcon fontSize="large" />
+                <AutorenewIcon fontSize="large" />
               </span>
               <div className="promotion__content_title">
                 <h1>Free Shipping Method</h1>

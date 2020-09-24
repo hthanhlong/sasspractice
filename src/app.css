@@ -30,12 +30,6 @@ a {
 
 a:hover {
   color: #f5790b;
-}
-
-a:focus,
-a:hover,
-.portfolio-cat a:hover,
-.footer li a:hover {
   text-decoration: none;
 }
 
@@ -79,9 +73,9 @@ a:hover,
 }
 
 .home__text .MuiButtonBase-root:hover {
+  color: red;
   -webkit-transform: translateY(-10px);
           transform: translateY(-10px);
-  color: red;
   background-color: lightcyan;
 }
 

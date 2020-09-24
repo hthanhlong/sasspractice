@@ -24,14 +24,8 @@ ul {
 a {
   color: black;
 }
-
 a:hover {
   color: $btn_hover;
-}
-a:focus,
-a:hover,
-.portfolio-cat a:hover,
-.footer li a:hover {
   text-decoration: none;
 }
 
