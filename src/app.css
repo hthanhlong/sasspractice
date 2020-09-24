@@ -799,6 +799,91 @@ a:hover {
   display: none;
 }
 
+.blog {
+  margin-top: 10rem;
+  width: 85%;
+}
+
+.blog__post {
+  margin-bottom: 8rem;
+  -webkit-box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.2);
+          box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.2);
+}
+
+.blog__post img {
+  width: 100%;
+}
+
+.blog__content {
+  width: 90%;
+  margin: auto;
+}
+
+.blog__content_title {
+  font-size: 3rem;
+  margin-top: 3rem;
+}
+
+.blog__content_description {
+  font-size: 1.7rem;
+  margin-bottom: 5rem;
+}
+
+.blog__content_action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 40%;
+  padding-bottom: 2rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.blog__content_action-tag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.right__side {
+  width: 100%;
+}
+
+.right__side-one {
+  background-color: #f3e6e6;
+  height: 20rem;
+  text-align: center;
+  border-radius: 0.5rem;
+}
+
+.right__side-one input {
+  height: 5rem;
+  width: 90%;
+  margin-top: 5rem;
+  outline: none;
+  border: 1px solid #ffc17a;
+  padding: 0 2rem;
+}
+
+.right__side-one .MuiButton-root {
+  width: 90%;
+  margin-top: 2rem;
+  height: 5rem;
+  background-color: blue;
+  color: white;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  outline: none;
+}
+
+.right__side-one .MuiButton-root:hover {
+  background-color: white;
+  color: blue;
+  border: 1px solid #fcbcbc;
+}
+
 .footer_area {
   display: -webkit-box;
   display: -ms-flexbox;

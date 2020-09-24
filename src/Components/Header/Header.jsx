@@ -48,7 +48,7 @@ const Header = () => {
                 </ul>
               </li>
               <li>
-                <NavLink to="/pages">Pages</NavLink>
+                <NavLink to="/">Pages</NavLink>
                 <ul className="submenu">
                   <li>
                     <NavLink to="">Login</NavLink>
@@ -72,6 +72,9 @@ const Header = () => {
                     <NavLink to="">Product Checkout</NavLink>
                   </li>
                 </ul>
+              </li>
+              <li>
+                <NavLink to="/blog">Blog</NavLink>
               </li>
               <li>
                 <NavLink to="">Contact</NavLink>

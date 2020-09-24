@@ -1,0 +1,70 @@
+.blog {
+  margin-top: 10rem;
+  width: 85%;
+
+  &__post {
+    margin-bottom: 8rem;
+    box-shadow: 2px 2px 10px rgba($color: grey, $alpha: 0.2);
+    img {
+      width: 100%;
+    }
+  }
+
+  &__content {
+    width: 90%;
+    margin: auto;
+    &_title {
+      font-size: 3rem;
+      margin-top: 3rem;
+    }
+    &_description {
+      font-size: 1.7rem;
+      margin-bottom: 5rem;
+    }
+
+    &_action {
+      display: flex;
+      width: 40%;
+
+      padding-bottom: 2rem;
+      justify-content: space-between;
+      &-tag {
+        display: flex;
+        position: relative;
+      }
+    }
+  }
+}
+
+.right__side {
+  width: 100%;
+  &-one {
+    background-color: #f3e6e6;
+    height: 20rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    input {
+      height: 5rem;
+      width: 90%;
+      margin-top: 5rem;
+      outline: none;
+      border: 1px solid #ffc17a;
+      padding: 0 2rem;
+    }
+
+    .MuiButton-root {
+      width: 90%;
+      margin-top: 2rem;
+      height: 5rem;
+      background-color: blue;
+      color: white;
+      transition: all 0.5s ease;
+      outline: none;
+      &:hover {
+        background-color: white;
+        color: blue;
+        border: 1px solid #fcbcbc;
+      }
+    }
+  }
+}
