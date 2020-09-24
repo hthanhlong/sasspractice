@@ -5,7 +5,7 @@ import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutline
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import MenuOutlinedIcon from "@material-ui/icons/MenuOutlined";
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
-import { Button, IconButton, Typography } from "@material-ui/core";
+import { Button, IconButton } from "@material-ui/core";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
@@ -21,60 +21,60 @@ const Header = () => {
         <nav className="row header__nav">
           <div className="col-3 col-sm-1 col-md-1 col-lg-1 col-lg-1">
             <span className="header__nav_logo">
-              <a href="#">
+              <NavLink to="/">
                 <h1>MyShop.</h1>
-              </a>
+              </NavLink>
             </span>
           </div>
           <div className="d-none d-lg-block col-lg-6 col-xl-6">
             <ul className="header__nav_list">
               <li>
-                <a href="">Home</a>
+                <NavLink to="/">Home</NavLink>
               </li>
               <li>
                 <Badge badgeContent="HOT" color="secondary">
-                  <a href="">Category</a>
+                  <NavLink to="">Category</NavLink>
                 </Badge>
               </li>
               <li>
-                <a href="#">Latest</a>
+                <NavLink to="#">Latest</NavLink>
                 <ul className="submenu">
                   <li>
-                    <a href="">Products List</a>
+                    <NavLink to="">Products List</NavLink>
                   </li>
                   <li>
-                    <a href="">Products Details</a>
+                    <NavLink to="">Products Details</NavLink>
                   </li>
                 </ul>
               </li>
               <li>
-                <a href="#">Pages</a>
+                <NavLink to="/pages">Pages</NavLink>
                 <ul className="submenu">
                   <li>
-                    <a href="">Login</a>
+                    <NavLink to="">Login</NavLink>
                   </li>
                   <li>
-                    <a href="">Card</a>
+                    <NavLink to="">Card</NavLink>
                   </li>
                   <li>
-                    <a href="">Element</a>
+                    <NavLink to="">Element</NavLink>
                   </li>
                   <li>
-                    <a href="">About</a>
+                    <NavLink to="">About</NavLink>
                   </li>
                   <li>
-                    <a href="">Confirmation</a>
+                    <NavLink to="">Confirmation</NavLink>
                   </li>
                   <li>
-                    <a href="">Shopping Cart</a>
+                    <NavLink to="">Shopping Cart</NavLink>
                   </li>
                   <li>
-                    <a href="">Product Checkout</a>
+                    <NavLink to="">Product Checkout</NavLink>
                   </li>
                 </ul>
               </li>
               <li>
-                <a href="">Contact</a>
+                <NavLink to="">Contact</NavLink>
               </li>
             </ul>
           </div>
@@ -88,9 +88,9 @@ const Header = () => {
                     placeholder="Search products"
                   />
                   <i>
-                    <a href="#">
+                    <NavLink to="#">
                       <SearchOutlinedIcon />
-                    </a>
+                    </NavLink>
                   </i>
                 </form>
               </li>
