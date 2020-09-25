@@ -18,8 +18,10 @@
     flex-direction: column;
     justify-content: space-between;
     margin-top: 20%;
+
     .MuiButtonBase-root {
       transition: all 0.4s ease;
+      animation: move2 1s infinite alternate;
       &:hover {
         color: red;
         transform: translateY(-10px);
@@ -262,7 +264,7 @@
   position: absolute;
   bottom: 10%;
   right: 10%;
-  animation: move 2s infinite ease-in;
+  animation: move 2s infinite alternate;
 }
 
 .bestcollection__background {
@@ -341,10 +343,10 @@
       height: 5rem;
       outline: none;
       border-radius: 5rem;
+
       &:hover {
         background-color: white;
         color: red;
-        transform: translateY(-5px);
       }
     }
   }
@@ -377,5 +379,14 @@
   }
   100% {
     transform: translateY(20px);
+  }
+}
+
+@keyframes move2 {
+  0% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(8px);
   }
 }

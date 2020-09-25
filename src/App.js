@@ -6,18 +6,22 @@ import { Switch, Route } from "react-router-dom";
 import Blog from "./Container/Blog/Blog";
 import Home from "./Container/Home/Home";
 import Footer from "./Components/Footer/Footer";
+import Login from "./Container/Login/Login";
 
 function App() {
   return (
+    <>
+    <CssBaseline />
     <div className="app">
-      <CssBaseline />
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/blog" component={Blog} />
+        <Route exact path="/login" component={Login} />
       </Switch>
       <Footer />
     </div>
+    </>
   );
 }
 

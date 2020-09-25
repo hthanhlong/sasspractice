@@ -6,7 +6,7 @@ import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import MenuOutlinedIcon from "@material-ui/icons/MenuOutlined";
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 import { Button, IconButton } from "@material-ui/core";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const Header = () => {
   const [isActiveMenu, setIsActiveMenu] = useState(false);
@@ -51,7 +51,7 @@ const Header = () => {
                 <NavLink to="/">Pages</NavLink>
                 <ul className="submenu">
                   <li>
-                    <NavLink to="">Login</NavLink>
+                    <NavLink to="/login">Login</NavLink>
                   </li>
                   <li>
                     <NavLink to="">Card</NavLink>
@@ -118,7 +118,9 @@ const Header = () => {
                 </div>
               </li>
               <li className="d-none d-lg-block header__nav_button">
-                <Button variant="contained">Sign in</Button>
+                <Link to="/login">
+                  <Button variant="contained">Sign in</Button>
+                </Link>
               </li>
               <li className="mobile_button d-lg-none">
                 <IconButton onClick={toggleMenu}>
