@@ -26,7 +26,7 @@ const Login = () => {
             <input name="password" type="password" placeholder="Password..." />
           </div>
           <div className="loginform__group">
-            <div className="loginform__group_checkbox">
+            <div className="loginform__group_checkbox  checkbox">
               <input id="checkbox" name="checkbox" type="checkbox" />
               <label htmlFor="checkbox">Remember me</label>
             </div>

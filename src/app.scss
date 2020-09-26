@@ -2,10 +2,11 @@
 @import "./Scss/config";
 @import "./Scss/mixin";
 // Container
-@import "./Container//Home/styles";
+@import "./Container/Home/styles";
 @import "./Container/About/styles";
 @import "./Components/Header/styles";
 @import "./Container/Blog/styles";
 @import "./Components/Footer/styles";
 @import "./Container/Login/styles";
-@import "./Container//Register/styles";
+@import "./Container/Register/styles";
+@import "./Container/Category/styles";

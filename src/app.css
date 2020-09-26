@@ -1199,21 +1199,9 @@ a:hover {
           align-items: center;
 }
 
-.loginform__group_checkbox input[type="checkbox"] {
-  margin-top: 1.2rem;
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
-  border: 1px solid pink;
-}
-
 .loginform__group_checkbox input:focus {
   -webkit-box-shadow: none;
           box-shadow: none;
-}
-
-.loginform__group_checkbox label {
-  margin-left: 1rem;
-  font-size: 1.6rem;
 }
 
 .loginform .MuiButtonBase-root {
@@ -1294,6 +1282,95 @@ a:hover {
   font-size: 1.6rem;
 }
 
+.checkbox {
+  width: 85%;
+  margin: 2rem auto;
+  position: relative;
+  display: block;
+}
+
+.checkbox input[type="checkbox"] {
+  width: auto;
+  opacity: 0.00000001;
+  position: absolute;
+  left: 0;
+  margin-left: -20px;
+}
+
+.checkbox label {
+  position: relative;
+}
+
+.checkbox label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 4px;
+  width: 22px;
+  height: 22px;
+  -webkit-transition: -webkit-transform 0.28s ease;
+  transition: -webkit-transform 0.28s ease;
+  transition: transform 0.28s ease;
+  transition: transform 0.28s ease, -webkit-transform 0.28s ease;
+  border-radius: 3px;
+  border: 2px solid #ee8fd1;
+}
+
+.checkbox label:after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 5px;
+  border-bottom: 2px solid #ee8fd1;
+  border-left: 2px solid #ee8fd1;
+  -webkit-transform: rotate(-45deg) scale(0);
+  transform: rotate(-45deg) scale(0);
+  -webkit-transition: -webkit-transform ease 0.25s;
+  transition: -webkit-transform ease 0.25s;
+  transition: transform ease 0.25s;
+  transition: transform ease 0.25s, -webkit-transform ease 0.25s;
+  will-change: transform;
+  position: absolute;
+  top: 12px;
+  left: 10px;
+}
+
+.checkbox input[type="checkbox"]:checked ~ label::before {
+  color: #ee8fd1;
+}
+
+.checkbox input[type="checkbox"]:checked ~ label::after {
+  -webkit-transform: rotate(-45deg) scale(1);
+  transform: rotate(-45deg) scale(1);
+}
+
+.checkbox label {
+  padding-left: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 0;
+  font-weight: normal;
+  padding-top: 0.5rem;
+  font-size: 1.6rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.checkbox label span {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.checkbox input[type="checkbox"]:focus + label::before {
+  outline: 0;
+}
+
 .background__register {
   background: #eeaeca;
   background: linear-gradient(128deg, #eeaeca 0%, #94bbe9 100%);
@@ -1340,5 +1417,136 @@ a:hover {
 .login__link a {
   font-size: 1.6rem;
   color: blue;
+}
+
+.products {
+  padding-top: 7rem;
+}
+
+.products__title {
+  width: 100%;
+  margin: auto;
+}
+
+.products__title h1 {
+  margin: auto;
+}
+
+.fillter {
+  text-align: right;
+  padding: 3rem 0;
+  padding-right: 2rem;
+  width: 100%;
+  margin: auto;
+  border-bottom: 1px solid #d3d2d0;
+  margin-bottom: 7rem;
+}
+
+.fillter__item label {
+  font-size: 1.6rem;
+  margin-right: 1rem;
+}
+
+.fillter__item select {
+  padding: 0 1rem;
+}
+
+.category__left {
+  background-color: #fff;
+}
+
+.category__left-content {
+  width: 90%;
+  margin: auto;
+}
+
+.category__left-title {
+  padding: 1.5rem;
+  border-bottom: 1px solid gray;
+}
+
+.category__left-list {
+  padding-left: 2rem;
+}
+
+.category__left-list ul li {
+  padding: 1rem;
+}
+
+.product1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.5);
+          box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.5);
+  margin-bottom: 5rem;
+  cursor: pointer;
+}
+
+.product1__img img {
+  width: 100%;
+  margin: 0 auto;
+  border-bottom: 1px solid black;
+}
+
+.product1__content {
+  width: 100%;
+}
+
+.product1__content ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70%;
+  padding: 0.5rem;
+  margin: auto;
+}
+
+.product1__content ul li {
+  margin: auto;
+}
+
+.product1__title {
+  font-size: 1.6rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.product1__price {
+  padding: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 70%;
+  margin: auto;
+}
+
+.product1__price span {
+  font-size: 2rem;
+}
+
+.product1__price span:last-child {
+  text-decoration: line-through;
+  color: red;
+}
+
+.product1:hover {
+  -webkit-transform: scale(1.02) translateY(5px);
+          transform: scale(1.02) translateY(5px);
 }
 /*# sourceMappingURL=app.css.map */

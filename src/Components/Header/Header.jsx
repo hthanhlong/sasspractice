@@ -33,7 +33,7 @@ const Header = () => {
               </li>
               <li>
                 <Badge badgeContent="HOT" color="secondary">
-                  <NavLink to="">Category</NavLink>
+                  <NavLink to="/category">Category</NavLink>
                 </Badge>
               </li>
               <li>
