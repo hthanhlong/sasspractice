@@ -43,7 +43,7 @@ const Blog = () => {
             </div>
           </div>
           <div className="blog__post">
-            <img src="assets/img/blog/single_blog_1.png" alt="" />
+            <img src="assets/img/blog/single_blog_2.png" alt="" />
             <div className="blog__content">
               <h1 className="blog__content_title">
                 <Link to="/">Google inks pact for new 35-storey office</Link>
@@ -75,7 +75,7 @@ const Blog = () => {
             </div>
           </div>
           <div className="blog__post">
-            <img src="assets/img/blog/single_blog_1.png" alt="" />
+            <img src="assets/img/blog/single_blog_3.png" alt="" />
             <div className="blog__content">
               <h1 className="blog__content_title">
                 <Link to="/">Google inks pact for new 35-storey office</Link>

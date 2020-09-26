@@ -7,6 +7,7 @@ import Blog from "./Container/Blog/Blog";
 import Home from "./Container/Home/Home";
 import Footer from "./Components/Footer/Footer";
 import Login from "./Container/Login/Login";
+import Register from "./Container/Register/Register";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/blog" component={Blog} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
       </Switch>
       <Footer />
     </div>

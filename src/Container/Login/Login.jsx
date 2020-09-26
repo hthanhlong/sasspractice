@@ -11,7 +11,7 @@ const Login = () => {
       <div className="row login">
         <div className="loginform">
           <span className="loginform__title">
-            <h1>Login</h1>
+            <h1>LOGIN</h1>
           </span>
           <div className="loginform__group">
             <span>
@@ -37,7 +37,7 @@ const Login = () => {
           <h3>Or login with</h3>
           <div className="login__social">
             <div className="login__social-item">
-              <span>
+              <span className="facebook_icon">
                 <FacebookIcon />
               </span>
               <Link to="/">Facebook</Link>
@@ -47,6 +47,9 @@ const Login = () => {
               <Link to="/">Google</Link>
             </div>
           </div>
+        </div>
+        <div className="register__link">
+          <Link to="/register">Don't have an account? Sign Up</Link>
         </div>
       </div>
     </div>

@@ -8,18 +8,19 @@
   );
   width: 100vw;
   height: 100vh;
-  padding: 5rem 0;
+  padding-top: 3.5rem;
 }
 
 .login {
   max-width: 50rem;
   margin: auto;
-  padding: 5rem 0;
+  padding: 2rem 0;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  border-radius: 1rem;
 }
 
 .loginform {
@@ -46,6 +47,11 @@
       font-size: 1.6rem;
       background-color: #e6e6e6;
     }
+
+    input:focus {
+      box-shadow: 2px 2px 10px pink;
+    }
+
     span {
       position: absolute;
       top: 20%;
@@ -58,11 +64,17 @@
 
       display: flex;
       align-items: center;
+
       input[type="checkbox"] {
         margin-top: 1.2rem;
         transform: scale(1.5);
         border: 1px solid pink;
       }
+
+      input:focus {
+        box-shadow: none;
+      }
+
       label {
         margin-left: 1rem;
         font-size: 1.6rem;
@@ -114,5 +126,20 @@
     h2 {
       font-weight: 700;
     }
+  }
+}
+
+.facebook_icon {
+  .MuiSvgIcon-root {
+    color: #4e72f5;
+  }
+}
+
+.register__link {
+  padding-bottom: 4rem;
+  transform: translateY(2rem);
+  a {
+    color: blue;
+    font-size: 1.6rem;
   }
 }
