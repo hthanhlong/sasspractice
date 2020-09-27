@@ -10,6 +10,7 @@ import Login from "./Container/Login/Login";
 import Register from "./Container/Register/Register";
 import Category from "./Container/Category/Category";
 import ProductDetails from "./Container/ProductDetails/ProductDetails";
+import Cart from "./Container/Cart/Cart";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/category" component={Category} />
+        <Route exact path="/cart" component={Cart} />
         <Route exact path="/productdetails" component={ProductDetails} />
       </Switch>
       <Footer />

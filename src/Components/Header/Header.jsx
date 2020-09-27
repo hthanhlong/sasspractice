@@ -99,7 +99,7 @@ const Header = () => {
               </li>
               <li className="header__nav_cart">
                 <div className="outsizeicon">
-                  <NavLink to="/">
+                  <NavLink to="/cart">
                     <Badge badgeContent={2} color="secondary">
                       <ShoppingCartOutlinedIcon style={{ fontSize: "24px" }} />
                     </Badge>
