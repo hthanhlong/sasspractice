@@ -3,7 +3,6 @@ import { Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import LockIcon from "@material-ui/icons/Lock";
-import FacebookIcon from "@material-ui/icons/Facebook";
 import AccountBoxIcon from "@material-ui/icons/AccountBox";
 
 const login = () => {

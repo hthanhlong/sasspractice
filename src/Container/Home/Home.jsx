@@ -132,7 +132,9 @@ const Home = () => {
                     <StarHalfIcon />
                   </li>
                   <li className="product__title">
-                    <h2>Green Dress with details</h2>
+                    <h2>
+                      <Link to="/productdetails">Green Dress with details</Link>
+                    </h2>
                   </li>
                   <li className="product__price">
                     <span className="product__price_new">$40</span>

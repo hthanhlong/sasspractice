@@ -9,6 +9,7 @@ import Footer from "./Components/Footer/Footer";
 import Login from "./Container/Login/Login";
 import Register from "./Container/Register/Register";
 import Category from "./Container/Category/Category";
+import ProductDetails from "./Container/ProductDetails/ProductDetails";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/category" component={Category} />
+        <Route exact path="/productdetails" component={ProductDetails} />
       </Switch>
       <Footer />
     </div>
