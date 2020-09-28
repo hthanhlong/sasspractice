@@ -18,6 +18,7 @@
     flex-direction: column;
     justify-content: space-between;
     margin-top: 20%;
+    animation: fadein 1.5s ease-in-out;
 
     .MuiButtonBase-root {
       transition: all 0.4s ease;
@@ -388,5 +389,14 @@
   }
   100% {
     transform: translateY(8px);
+  }
+}
+
+@keyframes fadein {
+  0% {
+    transform: translateX(1000px);
+  }
+  100% {
+    transform: translateX(0px);
   }
 }

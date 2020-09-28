@@ -104,7 +104,7 @@ const Cart = () => {
                 </div>
               </div>
               <div className="productdetails__button-addtocart">
-                <Button style={{ width: "100%" }}>Add To Cart</Button>
+                <Button style={{ width: "100%" }}>Check out</Button>
               </div>
             </div>
           </div>

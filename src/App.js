@@ -11,24 +11,26 @@ import Register from "./Container/Register/Register";
 import Category from "./Container/Category/Category";
 import ProductDetails from "./Container/ProductDetails/ProductDetails";
 import Cart from "./Container/Cart/Cart";
+import Contact from "./Container/Contact/Contact";
 
 function App() {
   return (
     <>
-    <CssBaseline />
-    <div className="app">
-      <Header />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/blog" component={Blog} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/category" component={Category} />
-        <Route exact path="/cart" component={Cart} />
-        <Route exact path="/productdetails" component={ProductDetails} />
-      </Switch>
-      <Footer />
-    </div>
+      <div className="app">
+        <CssBaseline />
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/blog" component={Blog} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/category" component={Category} />
+          <Route exact path="/cart" component={Cart} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/productdetails" component={ProductDetails} />
+        </Switch>
+        <Footer />
+      </div>
     </>
   );
 }

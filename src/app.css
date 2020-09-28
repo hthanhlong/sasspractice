@@ -65,6 +65,8 @@ a:hover {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-top: 20%;
+  -webkit-animation: fadein 1.5s ease-in-out;
+          animation: fadein 1.5s ease-in-out;
 }
 
 .home__text .MuiButtonBase-root {
@@ -603,6 +605,28 @@ a:hover {
   100% {
     -webkit-transform: translateY(8px);
             transform: translateY(8px);
+  }
+}
+
+@-webkit-keyframes fadein {
+  0% {
+    -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes fadein {
+  0% {
+    -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
   }
 }
 
@@ -1718,6 +1742,72 @@ a:hover {
   background-color: white;
   -webkit-box-shadow: 0px 0px 7px rgba(128, 128, 128, 0.5);
           box-shadow: 0px 0px 7px rgba(128, 128, 128, 0.5);
+}
+
+.contact__background {
+  padding: 5rem 0;
+  width: 100%;
+  height: 100%;
+  background: #eeaeae;
+  background: linear-gradient(175deg, #eeaeae 15%, #94e9a3 100%);
+}
+
+.contact__content {
+  border-radius: 1rem;
+  max-width: 70%;
+  margin: auto;
+  background-color: #ffff;
+  -webkit-box-shadow: 0px 0x 10px rgba(33, 34, 33, 0.5);
+          box-shadow: 0px 0x 10px rgba(33, 34, 33, 0.5);
+}
+
+.contact__content-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contact__content-left img {
+  margin: auto;
+}
+
+.contact__content-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contact__title {
+  width: 100%;
+  margin-top: 4rem;
+  color: black;
+}
+
+.contact__textarea {
+  width: 30rem;
+  height: 20rem;
+  padding: 1rem;
+  outline: none;
+  border: none;
+  background-color: #e6e6e6;
+  border-radius: 1rem;
+}
+
+.contact__textarea:focus {
+  -webkit-box-shadow: 0px 0px 10px #f0b1b1;
+          box-shadow: 0px 0px 10px #f0b1b1;
 }
 
 .productdetails {
