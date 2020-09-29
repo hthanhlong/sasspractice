@@ -1,9 +1,5 @@
 import React from "react";
 import { Button } from "@material-ui/core";
-import { Link } from "react-router-dom";
-import MailOutlineIcon from "@material-ui/icons/MailOutline";
-import LockIcon from "@material-ui/icons/Lock";
-import AccountBoxIcon from "@material-ui/icons/AccountBox";
 
 const Contact = () => {
   return (
@@ -34,7 +30,7 @@ const Contact = () => {
                   placeholder="message..."
                 />
               </div>
-              <div className="register__button">
+              <div className="contact__button">
                 <Button type="submit">Send me</Button>
               </div>
             </div>

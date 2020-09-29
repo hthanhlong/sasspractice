@@ -12,6 +12,7 @@ import Category from "./Container/Category/Category";
 import ProductDetails from "./Container/ProductDetails/ProductDetails";
 import Cart from "./Container/Cart/Cart";
 import Contact from "./Container/Contact/Contact";
+import Admin from "./Container/AdminPages/Admin/Admin";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route exact path="/cart" component={Cart} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/productdetails" component={ProductDetails} />
+          <Route exact path="/admin" component={Admin} />
         </Switch>
         <Footer />
       </div>

@@ -1754,7 +1754,7 @@ a:hover {
 
 .contact__content {
   border-radius: 1rem;
-  max-width: 70%;
+  max-width: 80%;
   margin: auto;
   background-color: #ffff;
   -webkit-box-shadow: 0px 0x 10px rgba(33, 34, 33, 0.5);
@@ -1808,6 +1808,18 @@ a:hover {
 .contact__textarea:focus {
   -webkit-box-shadow: 0px 0px 10px #f0b1b1;
           box-shadow: 0px 0px 10px #f0b1b1;
+}
+
+.contact__button .MuiButtonBase-root {
+  background-color: #9be1a5;
+  color: black;
+  margin: 4rem 0;
+  width: 100%;
+  outline: none;
+}
+
+.contact__button .MuiButtonBase-root:hover {
+  color: white;
 }
 
 .productdetails {
@@ -2002,5 +2014,112 @@ a:hover {
 .slick-next:before,
 .slick-prev:before {
   color: red;
+}
+
+.admin {
+  padding: 0;
+  margin: 0;
+}
+
+.admin__nav {
+  padding: 0 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #343a40;
+  -webkit-box-shadow: 0px 1px 20px rgba(19, 18, 18, 0.4);
+          box-shadow: 0px 1px 20px rgba(19, 18, 18, 0.4);
+  height: 6rem;
+}
+
+.admin__nav-leftside h1 {
+  margin: auto 0;
+  color: white;
+}
+
+.admin__nav-rightside {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.admin__nav-rightside .MuiSvgIcon-root {
+  color: azure;
+}
+
+.dropdown-menu {
+  position: absolute;
+  -webkit-transform: translate3d(-8rem, 4.7rem, 0px) !important;
+          transform: translate3d(-8rem, 4.7rem, 0px) !important;
+  top: 0;
+  right: 0;
+  width: 15rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 1px 1px 7px rgba(128, 128, 128, 0.4);
+          box-shadow: 1px 1px 7px rgba(128, 128, 128, 0.4);
+}
+
+.dropdown-menu ul li {
+  padding: 0 1rem;
+  margin: 1rem 0;
+}
+
+.dropdown-menu ul li:last-child {
+  border-top: 1px solid black;
+  margin: 0;
+}
+
+.admin__layout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.admin__layout-left {
+  background-color: #212529;
+  width: 20%;
+  color: white;
+  height: 100vh;
+}
+
+.admin__layout-left ul li {
+  margin: 1.4rem;
+}
+
+.admin__layout-left ul li h3 {
+  color: #343a40;
+  cursor: pointer;
+}
+
+.admin__layout-left ul li h3:hover {
+  color: white;
+}
+
+.admin__layout-right {
+  width: 80%;
+  padding: 2rem;
+}
+
+.nav-left-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav-left-title span {
+  margin-right: 1.5rem;
 }
 /*# sourceMappingURL=app.css.map */
