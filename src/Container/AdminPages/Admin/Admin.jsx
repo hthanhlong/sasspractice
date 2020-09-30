@@ -2,7 +2,6 @@ import React from "react";
 import PersonIcon from "@material-ui/icons/Person";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import DashboardIcon from "@material-ui/icons/Dashboard";
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import { Link } from "react-router-dom";
 
 const Admin = () => {
@@ -13,11 +12,11 @@ const Admin = () => {
           <h1>Admin</h1>
         </div>
         <div className="admin__nav-rightside">
-          <div class="dropdown show">
-            <a
-              class="btn btn-secondary"
-              href="#"
+          <div className="dropdown show">
+            <Link
+              className="btn btn-secondary"
               role="button"
+              to="#"
               id="dropdownMenuLink"
               data-toggle="dropdown"
               aria-haspopup="true"
@@ -25,8 +24,8 @@ const Admin = () => {
             >
               <PersonIcon />
               <ExpandMoreIcon />
-            </a>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            </Link>
+            <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
               <ul>
                 <li>
                   <Link className="dropdown-item" to="/">
@@ -63,7 +62,7 @@ const Admin = () => {
           </ul>
         </div>
         <div className="admin__layout-right">
-          <table class="table">
+          <table className="table">
             <thead>
               <tr>
                 <th scope="col">#</th>

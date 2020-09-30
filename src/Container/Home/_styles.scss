@@ -186,8 +186,10 @@
       width: 100%;
     }
   }
-  &_title {
+
+  &__title {
     font-size: 2rem;
+    height: 8rem;
     font-family: "Playfair Display", serif;
   }
   &__content {

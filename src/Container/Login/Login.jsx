@@ -1,38 +1,78 @@
-import { Button } from "@material-ui/core";
 import React from "react";
+import { Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import LockIcon from "@material-ui/icons/Lock";
 import FacebookIcon from "@material-ui/icons/Facebook";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import { LoginSchema } from "../../Services/Validation";
+import { login } from "../../ActionTypes/authAction";
+import { useDispatch, useSelector } from "react-redux";
 
-const Login = () => {
+const Login = (props) => {
+  const { history } = props;
+
+  const dispatch = useDispatch();
+
+  const auth = useSelector((state) => state.auth);
+  const { user } = auth;
+
+  const handleSubmit = (values) => {
+    dispatch(login(values));
+  };
+
+  if (auth.user && user.token) {
+    history.push("/");
+  }
+
   return (
     <div className="background">
       <div className="row login">
-        <div className="loginform">
-          <span className="loginform__title">
-            <h1>LOGIN</h1>
-          </span>
-          <div className="loginform__group">
-            <span>
-              <MailOutlineIcon />
+        <Formik
+          initialValues={{ email: "", password: "" }}
+          validationSchema={LoginSchema}
+          onSubmit={handleSubmit}
+        >
+          <Form className="loginform">
+            <span className="loginform__title">
+              <h1>LOGIN</h1>
             </span>
-            <input name="email" type="email" placeholder="Email..." />
-          </div>
-          <div className="loginform__group">
-            <span>
-              <LockIcon />
-            </span>
-            <input name="password" type="password" placeholder="Password..." />
-          </div>
-          <div className="loginform__group">
-            <div className="loginform__group_checkbox  checkbox">
-              <input id="checkbox" name="checkbox" type="checkbox" />
-              <label htmlFor="checkbox">Remember me</label>
+            <div className="loginform__group">
+              <span>
+                <MailOutlineIcon />
+              </span>
+              <Field name="email" type="email" placeholder="Email..." />
             </div>
-          </div>
-          <Button type="submit">Login</Button>
-        </div>
+            <ErrorMessage
+              name="email"
+              component="div"
+              className="error__message"
+            />
+            <div className="loginform__group">
+              <span>
+                <LockIcon />
+              </span>
+              <Field
+                name="password"
+                type="password"
+                placeholder="Password..."
+                autoComplete="true"
+              />
+            </div>
+            <ErrorMessage
+              name="password"
+              component="div"
+              className="error__message"
+            />
+            <div className="loginform__group">
+              <div className="loginform__group_checkbox  checkbox">
+                <input id="checkbox" name="checkbox" type="checkbox" />
+                <label htmlFor="checkbox">Remember me</label>
+              </div>
+            </div>
+            <Button type="submit">Login</Button>
+          </Form>
+        </Formik>
         <div className="logincontent">
           <h3>Or login with</h3>
           <div className="login__social">

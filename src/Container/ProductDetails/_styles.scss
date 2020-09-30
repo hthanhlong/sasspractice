@@ -46,6 +46,9 @@
         font-size: 1.3rem;
       }
     }
+    h6 {
+      text-decoration: line-through;
+    }
   }
   &__button {
     display: flex;
@@ -89,8 +92,10 @@
   }
 }
 
-.main_img {
-  width: 100%;
+.main__img {
+  img {
+    width: 100%;
+  }
 }
 
 .sub_img {

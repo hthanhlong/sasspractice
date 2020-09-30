@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Badge, Button, Divider } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import StarIcon from "@material-ui/icons/Star";
@@ -6,8 +6,22 @@ import StarHalfIcon from "@material-ui/icons/StarHalf";
 import RedeemIcon from "@material-ui/icons/Redeem";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import AutorenewIcon from "@material-ui/icons/Autorenew";
+import Axios from "axios";
 
 const Home = () => {
+  const [lastesProducts, setLastesProducts] = useState([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      await Axios.get("http://localhost:5000/products/?page=1&limit=6")
+        .then((res) => {
+          setLastesProducts(res.data.result);
+        })
+        .catch((err) => console.log(err));
+    };
+    getData();
+  }, []);
+
   return (
     <div className="container-fluid">
       <section className="row home">
@@ -116,102 +130,48 @@ const Home = () => {
           </div>
           <Divider />
           <div className="row products__lists">
-            <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-              <div className="product">
-                <div className="product_img">
-                  <Badge color="secondary" badgeContent="NEW">
-                    <img alt="" src="assets/img/categori/product1.png" />
-                  </Badge>
+            {!lastesProducts ? (
+              <div>...Loading</div>
+            ) : (
+              lastesProducts.map((item) => (
+                <div
+                  key={item.id}
+                  className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4"
+                >
+                  <div className="product">
+                    <div className="product__img">
+                      <Badge color="secondary" badgeContent="NEW">
+                        <img src={item.photo} alt="" />
+                      </Badge>
+                    </div>
+                    <ul className="product__content">
+                      <li className="product__star">
+                        <StarIcon />
+                        <StarIcon />
+                        <StarIcon />
+                        <StarIcon />
+                        <StarHalfIcon />
+                      </li>
+                      <li className="product__title">
+                        <h2>
+                          <Link to={`/productdetails/${item.id}`}>
+                            {item.description}
+                          </Link>
+                        </h2>
+                      </li>
+                      <li className="product__price">
+                        <span className="product__price_new">
+                          ${item.newprice}
+                        </span>
+                        <span className="product__price_old">
+                          ${item.oldprice}
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                <ul className="product__content">
-                  <li className="product__star">
-                    <StarIcon />
-                    <StarIcon />
-                    <StarIcon />
-                    <StarIcon />
-                    <StarHalfIcon />
-                  </li>
-                  <li className="product__title">
-                    <h2>
-                      <Link to="/productdetails">Green Dress with details</Link>
-                    </h2>
-                  </li>
-                  <li className="product__price">
-                    <span className="product__price_new">$40</span>
-                    <span className="product__price_old">$90</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-              <div className="product">
-                <div className="product_img">
-                  <img alt="" src="assets/img/categori/product1.png" />
-                </div>
-                <ul className="product__content">
-                  <li className="product__star">
-                    <StarIcon />
-                    <StarIcon />
-                    <StarIcon />
-                    <StarIcon />
-                    <StarHalfIcon />
-                  </li>
-                  <li className="product__title">
-                    <h2>Green Dress with details</h2>
-                  </li>
-                  <li className="product__price">
-                    <span className="product__price_new">$40</span>
-                    <span className="product__price_old">$90</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-              <div className="product">
-                <div className="product_img">
-                  <img alt="" src="assets/img/categori/product1.png" />
-                </div>
-                <ul className="product__content">
-                  <li className="product__star">
-                    <StarIcon />
-                    <StarIcon />
-                    <StarIcon />
-                    <StarIcon />
-                    <StarHalfIcon />
-                  </li>
-                  <li className="product__title">
-                    <h2>Green Dress with details</h2>
-                  </li>
-                  <li className="product__price">
-                    <span className="product__price_new">$40</span>
-                    <span className="product__price_old">$90</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-              <div className="product">
-                <div className="product_img">
-                  <img alt="" src="assets/img/categori/product1.png" />
-                </div>
-                <ul className="product__content">
-                  <li className="product__star">
-                    <StarIcon />
-                    <StarIcon />
-                    <StarIcon />
-                    <StarIcon />
-                    <StarHalfIcon />
-                  </li>
-                  <li className="product__title">
-                    <h2>Green Dress with details</h2>
-                  </li>
-                  <li className="product__price">
-                    <span className="product__price_new">$40</span>
-                    <span className="product__price_old">$90</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+              ))
+            )}
           </div>
         </div>
       </section>

@@ -13,6 +13,9 @@ import ProductDetails from "./Container/ProductDetails/ProductDetails";
 import Cart from "./Container/Cart/Cart";
 import Contact from "./Container/Contact/Contact";
 import Admin from "./Container/AdminPages/Admin/Admin";
+import PrivateRouter from "./Services/PrivateRouter";
+
+import ScrollToTop from "./Components/ScolltoTop";
 
 function App() {
   return (
@@ -20,16 +23,21 @@ function App() {
       <div className="app">
         <CssBaseline />
         <Header />
+        <ScrollToTop />
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/blog" component={Blog} />
+          <PrivateRouter exact path="/" component={Home} />
+          <PrivateRouter exact path="/blog" component={Blog} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
-          <Route exact path="/category" component={Category} />
-          <Route exact path="/cart" component={Cart} />
-          <Route exact path="/contact" component={Contact} />
-          <Route exact path="/productdetails" component={ProductDetails} />
-          <Route exact path="/admin" component={Admin} />
+          <PrivateRouter exact path="/category" component={Category} />
+          <PrivateRouter exact path="/cart" component={Cart} />
+          <PrivateRouter exact path="/contact" component={Contact} />
+          <PrivateRouter
+            exact
+            path="/productdetails/:id"
+            component={ProductDetails}
+          />
+          <PrivateRouter exact path="/admin" component={Admin} />
         </Switch>
         <Footer />
       </div>

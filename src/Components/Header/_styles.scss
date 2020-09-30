@@ -94,7 +94,7 @@
   background-color: #fff;
   border-top: 5px solid red;
   box-shadow: 2px 2px 5px rgb(155, 148, 148);
-  transition: all 10s ease;
+
   li {
     margin-top: 1rem;
     padding: 0 2rem;
@@ -160,4 +160,48 @@
 
 .togglemenu {
   display: none;
+}
+
+.mobile__nav {
+  height: 7rem;
+}
+
+.profile {
+  position: relative;
+  cursor: pointer;
+  padding: 3rem 2rem;
+  &__title {
+    background-color: rgba(94, 91, 91, 0.247);
+    padding: 1rem;
+    border-radius: 50%;
+  }
+}
+
+.profile__title-list {
+  position: absolute;
+  display: none;
+  background-color: #fff;
+  top: 9rem;
+  right: 0;
+  box-shadow: 3px 4px 10px rgba($color: #000000, $alpha: 0.2);
+  z-index: 99;
+  ul {
+    li {
+      margin: 0.5rem 0;
+      width: 100%;
+      padding: 0 4rem;
+      cursor: pointer;
+      &:hover {
+        background-color: rgba(202, 199, 199, 0.247);
+        color: $btn-hover;
+      }
+    }
+    li:last-child {
+      border-top: 1px solid black;
+    }
+  }
+}
+
+.profile:hover .profile__title-list {
+  display: block;
 }
