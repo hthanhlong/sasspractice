@@ -1,4 +1,10 @@
-import { LOGIN_ERROR, LOGIN_SUCCESS, LOG_OUT } from "../constant";
+import {
+  LOGIN_ERROR,
+  LOGIN_SUCCESS,
+  LOG_OUT,
+  REGISTER_ERROR,
+  REGISTER_SUCCESS,
+} from "../constant";
 
 const initialState = {
   isAuth: false,
@@ -14,14 +20,23 @@ export const authReducers = (state = initialState, action) => {
     case LOGIN_ERROR:
       return {
         isAuth: false,
-        error: action.payload,
+        errorLogin: action.payload,
+      };
+    case REGISTER_SUCCESS:
+      console.log(action.payload);
+      return {
+        isAuth: false,
+        data: action.payload,
+      };
+    case REGISTER_ERROR:
+      return {
+        isAuth: false,
+        errorRegister: action.payload,
       };
     case LOG_OUT:
       localStorage.removeItem("Token");
       return {
         isAuth: false,
-        user: {},
-        error: {},
       };
     default:
       return state;

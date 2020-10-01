@@ -15,7 +15,7 @@ const Login = (props) => {
   const dispatch = useDispatch();
 
   const auth = useSelector((state) => state.auth);
-  const { user } = auth;
+  const { user, errorLogin } = auth;
 
   const handleSubmit = (values) => {
     dispatch(login(values));
@@ -64,12 +64,16 @@ const Login = (props) => {
               component="div"
               className="error__message"
             />
+            {errorLogin && (
+              <div className="error__message_spec">{errorLogin}</div>
+            )}
             <div className="loginform__group">
               <div className="loginform__group_checkbox  checkbox">
                 <input id="checkbox" name="checkbox" type="checkbox" />
                 <label htmlFor="checkbox">Remember me</label>
               </div>
             </div>
+
             <Button type="submit">Login</Button>
           </Form>
         </Formik>

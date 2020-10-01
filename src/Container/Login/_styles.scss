@@ -21,6 +21,14 @@
   justify-content: space-between;
   align-items: center;
   border-radius: 1rem;
+  @media #{$xs_mobile} {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .loginform {
@@ -46,6 +54,12 @@
       border-radius: 1rem;
       font-size: 1.6rem;
       background-color: #e6e6e6;
+      @media #{$xs_mobile} {
+        width: 100%;
+        padding: 0 1rem 0 4rem;
+        margin: 2;
+        display: flex;
+      }
     }
 
     input:focus {
@@ -56,6 +70,10 @@
       position: absolute;
       top: 20%;
       left: 10%;
+      @media #{$xs_mobile} {
+        top: 17%;
+        left: 4%;
+      }
     }
     &_checkbox {
       height: 40%;
@@ -86,12 +104,17 @@
 }
 
 .logincontent {
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   h3 {
     margin-bottom: 2rem;
+  }
+  @media #{$xs_mobile} {
+    width: 100%;
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -105,7 +128,7 @@
     border: 1px solid grey;
     width: 15rem;
     height: 4rem;
-    margin-right: 2rem;
+    margin-right: 1rem;
 
     a {
       font-size: 1.5rem;

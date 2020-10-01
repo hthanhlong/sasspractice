@@ -4,38 +4,92 @@ import { Link } from "react-router-dom";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import LockIcon from "@material-ui/icons/Lock";
 import AccountBoxIcon from "@material-ui/icons/AccountBox";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import { RegisterSchema } from "../../Services/Validation";
+import { useDispatch, useSelector } from "react-redux";
+import { register } from "../../ActionTypes/authAction";
+import { Alert } from "@material-ui/lab";
 
-const login = () => {
+const Register = (props) => {
+  const { history } = props;
+  const User = {
+    name: "",
+    email: "",
+    password: "",
+  };
+
+  const dispatch = useDispatch();
+
+  const auth = useSelector((state) => state.auth);
+
+  const { user, errorRegister, data } = auth;
+
+  const handleOnSubmit = (values) => {
+    dispatch(register(values));
+  };
+
+  if (data) {
+    history.push("/login");
+  }
+
   return (
     <div className="background__register">
       <div className="row register">
-        <div className="loginform">
-          <span className="registerform__title">
-            <h1>REGISTRATION FORM</h1>
-          </span>
-          <div className="loginform__group">
-            <span>
-              <AccountBoxIcon />
+        <Formik
+          initialValues={User}
+          validationSchema={RegisterSchema}
+          onSubmit={handleOnSubmit}
+        >
+          <Form className="loginform">
+            <span className="registerform__title">
+              <h1>REGISTRATION FORM</h1>
             </span>
-            <input name="name" type="text" placeholder="Name..." />
-          </div>
-          <div className="loginform__group">
-            <span>
-              <MailOutlineIcon />
-            </span>
-            <input name="email" type="email" placeholder="Email..." />
-          </div>
-          <div className="loginform__group">
-            <span>
-              <LockIcon />
-            </span>
-            <input name="password" type="password" placeholder="Password..." />
-          </div>
-          <div className="register__button">
-            <Button type="submit">Register</Button>
-          </div>
-        </div>
-
+            <div className="loginform__group">
+              <span>
+                <AccountBoxIcon />
+              </span>
+              <Field name="name" type="text" placeholder="Name..." />
+            </div>
+            <ErrorMessage
+              name="name"
+              component="div"
+              className="error__message"
+            />
+            <div className="loginform__group">
+              <span>
+                <MailOutlineIcon />
+              </span>
+              <Field name="email" type="email" placeholder="Email..." />
+            </div>
+            <ErrorMessage
+              name="email"
+              component="div"
+              className="error__message"
+            />
+            <div className="loginform__group">
+              <span>
+                <LockIcon />
+              </span>
+              <Field
+                name="password"
+                type="password"
+                placeholder="Password..."
+                autoComplete="true"
+              />
+            </div>
+            <ErrorMessage
+              name="password"
+              component="div"
+              className="error__message"
+            />
+            {errorRegister && (
+              <div className="error__message_special">{errorRegister}</div>
+            )}
+            <div className="register__button">
+              <Button type="submit">Register</Button>
+            </div>
+          </Form>
+        </Formik>
         <div className="login__link">
           <Link to="/login">Already have an account? Log in</Link>
         </div>
@@ -44,4 +98,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Register;

@@ -207,7 +207,7 @@ const Header = () => {
           <div
             className={
               isActiveMenu
-                ? "nav_mobile d-lg-blcok"
+                ? "nav_mobile d-lg-block"
                 : "nav_mobile d-sm-none togglemenu"
             }
           >

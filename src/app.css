@@ -246,7 +246,7 @@ a:hover {
 }
 
 .products__title h1 {
-  font-size: 4rem;
+  font-size: 4.8rem;
   font-family: "Playfair Display", serif;
   font-weight: 700;
 }
@@ -290,6 +290,12 @@ a:hover {
           align-items: center;
   width: 100%;
   margin: 0rem 1rem;
+}
+
+@media (max-width: 420px) {
+  .product {
+    margin: 0;
+  }
 }
 
 .product__img {
@@ -349,11 +355,23 @@ a:hover {
   text-decoration: line-through;
 }
 
+@media (max-width: 420px) {
+  .product__price {
+    width: 70%;
+  }
+}
+
 .bestproduct__background {
   background-color: #fff7d8;
   margin-top: 4rem;
   width: 100%;
   height: 100%;
+}
+
+@media (max-width: 420px) {
+  .bestproduct__background {
+    height: 20rem;
+  }
 }
 
 .bestproduct_img img {
@@ -374,6 +392,14 @@ a:hover {
       -ms-flex-pack: center;
           justify-content: center;
   height: 100%;
+}
+
+@media (max-width: 420px) {
+  .bestproduct_content {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .bestproduct_content .MuiButton-root {
@@ -398,8 +424,21 @@ a:hover {
   width: 80%;
 }
 
+@media (max-width: 420px) {
+  .bestproduct_content h1 {
+    font-size: 2rem;
+  }
+}
+
 .bestproduct_content p {
   font-size: 2.5rem;
+}
+
+@media (max-width: 420px) {
+  .bestproduct_content p {
+    font-size: 1.6rem;
+    margin-left: 3rem;
+  }
 }
 
 .bestproduct_icon {
@@ -487,9 +526,21 @@ a:hover {
   padding-left: 15rem;
 }
 
+@media (max-width: 420px) {
+  .lastestoffer__title {
+    padding-left: 0;
+  }
+}
+
 .lastestoffer__title h1 {
   font-size: 5rem;
   margin-bottom: 2rem;
+}
+
+@media (max-width: 420px) {
+  .lastestoffer__title h1 {
+    font-size: 3rem;
+  }
 }
 
 .lastestoffer__title p {
@@ -508,12 +559,20 @@ a:hover {
   padding-left: 10rem;
 }
 
+@media (max-width: 420px) {
+  .lastestoffer__text {
+    padding-left: 0rem;
+    width: 100%;
+  }
+}
+
 .lastestoffer__text input {
   height: 5rem;
   font-size: 2rem;
   border: none;
   padding: 0 2rem;
   border-radius: 5rem;
+  width: 100%;
 }
 
 .lastestoffer__text input:focus {
@@ -526,6 +585,12 @@ a:hover {
   height: 5rem;
   outline: none;
   border-radius: 5rem;
+}
+
+@media (max-width: 420px) {
+  .lastestoffer__text .MuiButton-root {
+    width: 100%;
+  }
 }
 
 .lastestoffer__text .MuiButton-root:hover {
@@ -696,6 +761,7 @@ a:hover {
 
 .header__nav_list li:hover .submenu {
   display: block;
+  opacity: 1;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -760,6 +826,7 @@ a:hover {
 
 .submenu {
   display: none;
+  opacity: 0;
   position: absolute;
   top: 95%;
   background-color: #fff;
@@ -793,8 +860,8 @@ a:hover {
 
 .nav_mobile {
   position: absolute;
-  -webkit-transition: all 10s ease;
-  transition: all 10s ease;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
   background: #020024;
   background: -webkit-gradient(linear, left top, right top, from(#020024), color-stop(0%, #03012a), color-stop(100%, #549aa8), to(#2d2ddd));
   background: linear-gradient(90deg, #020024 0%, #03012a 0%, #549aa8 100%, #2d2ddd 100%);
@@ -811,6 +878,9 @@ a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transform: translateX(-500px);
+          transform: translateX(-500px);
+  opacity: 0;
 }
 
 .nav_mobile li {
@@ -841,7 +911,9 @@ a:hover {
 }
 
 .togglemenu {
-  display: none;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  opacity: 1;
 }
 
 .mobile__nav {
@@ -1214,6 +1286,26 @@ a:hover {
   border-radius: 1rem;
 }
 
+@media (max-width: 420px) {
+  .login {
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .loginform {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1246,6 +1338,17 @@ a:hover {
   background-color: #e6e6e6;
 }
 
+@media (max-width: 420px) {
+  .loginform__group input {
+    width: 100%;
+    padding: 0 1rem 0 4rem;
+    margin: 2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 .loginform__group input:focus {
   -webkit-box-shadow: 2px 2px 10px pink;
           box-shadow: 2px 2px 10px pink;
@@ -1255,6 +1358,13 @@ a:hover {
   position: absolute;
   top: 20%;
   left: 10%;
+}
+
+@media (max-width: 420px) {
+  .loginform__group span {
+    top: 17%;
+    left: 4%;
+  }
 }
 
 .loginform__group_checkbox {
@@ -1289,7 +1399,7 @@ a:hover {
 }
 
 .logincontent {
-  width: 80%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1304,6 +1414,18 @@ a:hover {
 
 .logincontent h3 {
   margin-bottom: 2rem;
+}
+
+@media (max-width: 420px) {
+  .logincontent {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .login__social {
@@ -1325,7 +1447,7 @@ a:hover {
   border: 1px solid grey;
   width: 15rem;
   height: 4rem;
-  margin-right: 2rem;
+  margin-right: 1rem;
 }
 
 .login__social-item a {
@@ -1453,8 +1575,9 @@ a:hover {
 .background__register {
   background: #eeaeca;
   background: linear-gradient(128deg, #eeaeca 0%, #94bbe9 100%);
-  height: 100vh;
-  padding-top: 3.5rem;
+  height: 100%;
+  width: 100%;
+  padding: 3.5rem 0;
 }
 
 .register {
@@ -1496,6 +1619,10 @@ a:hover {
 .login__link a {
   font-size: 1.6rem;
   color: blue;
+}
+
+.error__message_special {
+  color: red;
 }
 
 .products {
@@ -2180,5 +2307,13 @@ a:hover {
 
 .nav-left-title span {
   margin-right: 1.5rem;
+}
+
+.lazyload {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 /*# sourceMappingURL=app.css.map */

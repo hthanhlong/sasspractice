@@ -116,17 +116,6 @@ const Home = () => {
         <div className="products">
           <div className="row products__title">
             <h1>Products Lastest</h1>
-            <ul>
-              <li>
-                <Link to="/">Lastest</Link>
-              </li>
-              <li>
-                <Link to="/">All</Link>
-              </li>
-              <li>
-                <Link to="/">New</Link>
-              </li>
-            </ul>
           </div>
           <Divider />
           <div className="row products__lists">
@@ -190,7 +179,7 @@ const Home = () => {
                 <div>
                   <Button>Shop Now</Button>
                 </div>
-                <div className="bestproduct_icon">
+                <div className="bestproduct_icon d-none d-lg-block">
                   <img alt="" src="assets/img/categori/card-shape.png" />
                 </div>
               </div>
