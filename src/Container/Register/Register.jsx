@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
@@ -8,7 +8,6 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { RegisterSchema } from "../../Services/Validation";
 import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../ActionTypes/authAction";
-import { Alert } from "@material-ui/lab";
 
 const Register = (props) => {
   const { history } = props;
@@ -22,15 +21,17 @@ const Register = (props) => {
 
   const auth = useSelector((state) => state.auth);
 
-  const { user, errorRegister, data } = auth;
+  const { errorRegister, data } = auth;
 
   const handleOnSubmit = (values) => {
     dispatch(register(values));
   };
 
-  if (data) {
-    history.push("/login");
-  }
+  useEffect(() => {
+    if (data) {
+      history.push("/login");
+    }
+  }, [data, history]);
 
   return (
     <div className="background__register">

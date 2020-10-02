@@ -158,3 +158,19 @@
 .slick-prev:before {
   color: red;
 }
+
+.modal-content {
+  transform: translateY(150%);
+  padding: 3rem;
+  width: 100%;
+  margin: auto;
+  background-color: #edf7ed;
+}
+
+.modal-header {
+  border: none;
+}
+
+.modal-body {
+  text-align: center;
+}

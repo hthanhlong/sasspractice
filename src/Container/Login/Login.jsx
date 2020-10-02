@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
@@ -11,7 +11,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 const Login = (props) => {
   const { history } = props;
-
   const dispatch = useDispatch();
 
   const auth = useSelector((state) => state.auth);
@@ -21,9 +20,11 @@ const Login = (props) => {
     dispatch(login(values));
   };
 
-  if (auth.user && user.token) {
-    history.push("/");
-  }
+  useEffect(() => {
+    if (user) {
+      history.push("/");
+    }
+  }, [user, history]);
 
   return (
     <div className="background">

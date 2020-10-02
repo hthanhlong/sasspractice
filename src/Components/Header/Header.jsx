@@ -21,6 +21,8 @@ const Header = () => {
 
   const { isAuth } = auth;
 
+  const listCart = useSelector((state) => state.cart.itemsList);
+
   const toggleMenu = () => {
     setIsActiveMenu(!isActiveMenu);
   };
@@ -155,7 +157,10 @@ const Header = () => {
               <li className="header__nav_cart">
                 <div className="outsizeicon">
                   <NavLink to="/cart">
-                    <Badge badgeContent={2} color="secondary">
+                    <Badge
+                      badgeContent={listCart && listCart.length}
+                      color="secondary"
+                    >
                       <ShoppingCartOutlinedIcon style={{ fontSize: "24px" }} />
                     </Badge>
                   </NavLink>

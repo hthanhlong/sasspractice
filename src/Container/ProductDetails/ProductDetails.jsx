@@ -2,9 +2,13 @@ import React, { useState, useEffect } from "react";
 import StarIcon from "@material-ui/icons/Star";
 import StarHalfIcon from "@material-ui/icons/StarHalf";
 import { Link } from "react-router-dom";
-import { Button, Divider } from "@material-ui/core";
+import { Button, CircularProgress, Divider } from "@material-ui/core";
 import Slider from "react-slick";
 import Axios from "axios";
+import { API_ROOT } from "../../Api/configAxios";
+import { Alert } from "@material-ui/lab";
+import { addToCart } from "../../ActionTypes/cartAction";
+import { useDispatch } from "react-redux";
 
 const ProductDetails = (props) => {
   const id = props.match.params.id;
@@ -17,7 +21,7 @@ const ProductDetails = (props) => {
   );
   useEffect(() => {
     const getProduct = async () => {
-      await Axios.get(`http://localhost:5000/products/${id}`)
+      await Axios.get(`${API_ROOT}/products/${id}`)
         .then((res) => {
           setProduct(res.data);
         })
@@ -43,8 +47,17 @@ const ProductDetails = (props) => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+  const dispatch = useDispatch();
+  const handleOnAddToCart = (product) => {
+    dispatch(addToCart(product));
+  };
 
-  if (!product) return <div>Loading.....</div>;
+  if (!product)
+    return (
+      <div className="lazyload">
+        <CircularProgress />
+      </div>
+    );
 
   return (
     <div className="productdetails__background">
@@ -131,7 +144,13 @@ const ProductDetails = (props) => {
                     <button onClick={handleUpQty}> + </button>
                   </div>
                   <div className="productdetails__button-addtocart">
-                    <Button>Add To Cart</Button>
+                    <Button
+                      data-toggle="modal"
+                      data-target="#exampleModal"
+                      onClick={() => handleOnAddToCart(product)}
+                    >
+                      Add To Cart
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -305,6 +324,31 @@ const ProductDetails = (props) => {
                 </ul>
               </div>
             </Slider>
+          </div>
+        </div>
+      </div>
+      {/* Modal */}
+      <div>
+        <div
+          className="modal fade"
+          id="exampleModal"
+          tabIndex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div
+                className="modal-body"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <Alert severity="success">
+                  <h2>Your Product was added to cart</h2>
+                </Alert>
+              </div>
+            </div>
           </div>
         </div>
       </div>

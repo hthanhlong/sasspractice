@@ -7,13 +7,14 @@ import RedeemIcon from "@material-ui/icons/Redeem";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import AutorenewIcon from "@material-ui/icons/Autorenew";
 import Axios from "axios";
+import { API_ROOT } from "../../Api/configAxios";
 
 const Home = () => {
   const [lastesProducts, setLastesProducts] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
-      await Axios.get("http://localhost:5000/products/?page=1&limit=6")
+      await Axios.get(`${API_ROOT}/products/?page=1&limit=6`)
         .then((res) => {
           setLastesProducts(res.data.result);
         })
@@ -130,7 +131,9 @@ const Home = () => {
                   <div className="product">
                     <div className="product__img">
                       <Badge color="secondary" badgeContent="NEW">
-                        <img src={item.photo} alt="" />
+                        <Link to={`/productdetails/${item.id}`}>
+                          <img src={item.photo} alt="" />
+                        </Link>
                       </Badge>
                     </div>
                     <ul className="product__content">

@@ -1,87 +1,71 @@
 import { Divider, Button } from "@material-ui/core";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { removeFromCart } from "../../ActionTypes/cartAction";
 
 const Cart = () => {
+  const dispatch = useDispatch();
+
+  const listCart = useSelector((state) => state.cart.itemsList);
+
+  console.log("listCart", listCart);
+
+  const handleDetele = (product) => {
+    dispatch(removeFromCart(product));
+  };
+
   return (
     <div className="cart">
       <div className="container">
         <div className="cart__title">
           <h1>Cart</h1>
-          <h4>(1 products)</h4>
+          {listCart && <h4> ({listCart.length} products)</h4>}
         </div>
 
         <div className="row cart__main">
           <div className="col-lg-9 background_cartmain">
-            <div className="cart__left">
-              <img
-                className="cart__left-img"
-                src="assets/img/categori/product1.png"
-                alt=""
-              />
-              <div className="cart__left-content">
-                <div className="cart__left-content-left">
-                  <h3>Green Dress with details</h3>
-                  <h4>Sold by: Tiki trading</h4>
-                  <h4 className="cart__button">Delete</h4>
-                </div>
-                <div className="cart__left-content-right">
-                  <div>
-                    <h3>$ 80</h3>
-                    <div className="cart__price">
-                      <h5 className="cart__price-old">$120</h5>
-                      <Divider
-                        orientation="vertical"
-                        flexItem
-                        style={{ margin: "0 1rem" }}
-                      />
-                      <h5>25%</h5>
+            {listCart.length === 0 ? (
+              <div>Your cart is empty</div>
+            ) : (
+              listCart.map((item) => (
+                <div key={item.id} className="cart__left">
+                  <img className="cart__left-img" src={item.photo} alt="" />
+                  <div className="cart__left-content">
+                    <div className="cart__left-content-left">
+                      <h3>{item.description}</h3>
+                      <h4>Sold by: Tiki trading</h4>
+                      <h4
+                        className="cart__button"
+                        onClick={() => handleDetele(item)}
+                      >
+                        Delete
+                      </h4>
                     </div>
-                  </div>
-                  <div>
-                    <div className="productdetails__button-qty">
-                      <button> + </button>
-                      <span>1</span>
-                      <button> - </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="cart__left">
-              <img
-                className="cart__left-img"
-                src="assets/img/categori/product1.png"
-                alt=""
-              />
-              <div className="cart__left-content">
-                <div className="cart__left-content-left">
-                  <h3>Green Dress with details</h3>
-                  <h4>Sold by: Tiki trading</h4>
-                  <h4 className="cart__button">Delete</h4>
-                </div>
-                <div className="cart__left-content-right">
-                  <div>
-                    <h3>$ 80</h3>
-                    <div className="cart__price">
-                      <h5 className="cart__price-old">$120</h5>
-                      <Divider
-                        orientation="vertical"
-                        flexItem
-                        style={{ margin: "0 1rem" }}
-                      />
-                      <h5>25%</h5>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="productdetails__button-qty">
-                      <button> + </button>
-                      <span>1</span>
-                      <button> - </button>
+                    <div className="cart__left-content-right">
+                      <div>
+                        <h3>$ {item.newprice}</h3>
+                        <div className="cart__price">
+                          <h5 className="cart__price-old">$ {item.oldprice}</h5>
+                          <Divider
+                            orientation="vertical"
+                            flexItem
+                            style={{ margin: "0 1rem" }}
+                          />
+                          <h5>25%</h5>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="productdetails__button-qty">
+                          <button> + </button>
+                          <span>{item.count}</span>
+                          <button> - </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              ))
+            )}
           </div>
           <div className="col-lg-3">
             <div className="cart__right">
@@ -95,12 +79,26 @@ const Cart = () => {
                 </div>
                 <div className="cart__right-ordersummary-price">
                   <span>Subtotal:</span>
-                  <h3>$ 80</h3>
+                  <h3>
+                    ${" "}
+                    {listCart.reduce(
+                      (total, element) =>
+                        total + element.count * element.newprice,
+                      0
+                    )}
+                  </h3>
                 </div>
                 <Divider />
                 <div className="cart__right-ordersummary-price">
                   <span>Order Total:</span>
-                  <h2>$ 80</h2>
+                  <h2>
+                    ${" "}
+                    {listCart.reduce(
+                      (total, element) =>
+                        total + element.count * element.newprice,
+                      0
+                    )}
+                  </h2>
                 </div>
               </div>
               <div className="productdetails__button-addtocart">
