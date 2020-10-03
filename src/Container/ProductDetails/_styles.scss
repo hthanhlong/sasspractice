@@ -103,6 +103,7 @@
   flex-direction: column;
   img {
     width: 70%;
+    margin: auto;
     margin-bottom: 2rem;
     padding: 0.4rem;
     border: 1px solid rgba($color: grey, $alpha: 0.3);
@@ -173,4 +174,8 @@
 
 .modal-body {
   text-align: center;
+}
+
+.sub_menu {
+  margin: auto;
 }

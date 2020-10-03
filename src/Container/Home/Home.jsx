@@ -14,7 +14,7 @@ const Home = () => {
 
   useEffect(() => {
     const getData = async () => {
-      await Axios.get(`${API_ROOT}/products/?page=1&limit=6`)
+      await Axios.get(`${API_ROOT}/products/?page=1&limit=8`)
         .then((res) => {
           setLastesProducts(res.data.result);
         })
@@ -126,7 +126,7 @@ const Home = () => {
               lastesProducts.map((item) => (
                 <div
                   key={item.id}
-                  className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4"
+                  className="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3"
                 >
                   <div className="product">
                     <div className="product__img">

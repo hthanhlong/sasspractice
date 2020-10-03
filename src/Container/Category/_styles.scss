@@ -8,8 +8,6 @@
       margin: auto;
     }
   }
-  &__background {
-  }
 }
 
 .fillter {
@@ -103,4 +101,14 @@
   &:hover {
     transform: scale(1.02) translateY(5px);
   }
+
+  &__star {
+    .MuiSvgIcon-root {
+      color: #fdc230;
+    }
+  }
+}
+
+.sort__term {
+  outline: none;
 }

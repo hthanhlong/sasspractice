@@ -8,6 +8,7 @@ import PrivateRouter from "./Services/PrivateRouter";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import ScrollToTop from "./Components/ScolltoTop";
 
+const Payment = lazy(() => import("./Container/Payment/Payment"));
 const Blog = lazy(() => import("./Container/Blog/Blog"));
 const Register = lazy(() => import("./Container/Register/Register"));
 const Category = lazy(() => import("./Container/Category/Category"));
@@ -47,6 +48,7 @@ function App() {
               path="/productdetails/:id"
               component={ProductDetails}
             />
+            <PrivateRouter exact path="/payment" component={Payment} />
             <PrivateRouter exact path="/admin" component={Admin} />
           </Switch>
           <Footer />

@@ -1,10 +1,11 @@
 import { ADD_TO_CART, REMOVE_FROM_CART } from "../constant";
 
-export const addToCart = (product) => async (dispatch) => {
+export const addToCart = (product, qty) => async (dispatch) => {
+  const dataProduct = { product, qty };
   try {
     await dispatch({
       type: ADD_TO_CART,
-      payload: product,
+      payload: dataProduct,
     });
   } catch (error) {
     console.log(error.message);

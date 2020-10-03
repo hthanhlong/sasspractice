@@ -1,14 +1,13 @@
-import { Divider, Button } from "@material-ui/core";
 import React from "react";
+import { Divider, Button } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart } from "../../ActionTypes/cartAction";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const dispatch = useDispatch();
 
   const listCart = useSelector((state) => state.cart.itemsList);
-
-  console.log("listCart", listCart);
 
   const handleDetele = (product) => {
     dispatch(removeFromCart(product));
@@ -23,7 +22,7 @@ const Cart = () => {
         </div>
 
         <div className="row cart__main">
-          <div className="col-lg-9 background_cartmain">
+          <div className="col-12 col-lg-9 background_cartmain">
             {listCart.length === 0 ? (
               <div>Your cart is empty</div>
             ) : (
@@ -32,7 +31,9 @@ const Cart = () => {
                   <img className="cart__left-img" src={item.photo} alt="" />
                   <div className="cart__left-content">
                     <div className="cart__left-content-left">
-                      <h3>{item.description}</h3>
+                      <Link to={`/productdetails/${item.id}`}>
+                        <h3>{item.description}</h3>
+                      </Link>
                       <h4>Sold by: Tiki trading</h4>
                       <h4
                         className="cart__button"
@@ -51,7 +52,19 @@ const Cart = () => {
                             flexItem
                             style={{ margin: "0 1rem" }}
                           />
-                          <h5>25%</h5>
+                          {Math.floor(
+                            ((item.oldprice - item.newprice) / item.oldprice) *
+                              100
+                          ) > 0 && (
+                            <h5>
+                              {Math.floor(
+                                ((item.oldprice - item.newprice) /
+                                  item.oldprice) *
+                                  100
+                              )}
+                              %
+                            </h5>
+                          )}
                         </div>
                       </div>
                       <div>
@@ -67,7 +80,7 @@ const Cart = () => {
               ))
             )}
           </div>
-          <div className="col-lg-3">
+          <div className="col-12 col-lg-3">
             <div className="cart__right">
               <div className="row cart__right-discount">
                 <h2>Enter voucher code</h2>
@@ -102,7 +115,9 @@ const Cart = () => {
                 </div>
               </div>
               <div className="productdetails__button-addtocart">
-                <Button style={{ width: "100%" }}>Check out</Button>
+                <Link to="/payment">
+                  <Button style={{ width: "100%" }}>Check out</Button>
+                </Link>
               </div>
             </div>
           </div>

@@ -3,7 +3,7 @@ import { ADD_TO_CART, REMOVE_FROM_CART } from "../constant";
 export const cartReducers = (state = { itemsList: [] }, action) => {
   switch (action.type) {
     case ADD_TO_CART:
-      const product = action.payload;
+      const product = action.payload.product;
       const updateItem = [...state.itemsList].find((x) => x.id === product.id);
       if (updateItem) {
         return {
@@ -16,7 +16,12 @@ export const cartReducers = (state = { itemsList: [] }, action) => {
           }),
         };
       }
-      return { itemsList: [...state.itemsList, { ...product, count: 1 }] };
+      return {
+        itemsList: [
+          ...state.itemsList,
+          { ...product, count: action.payload.qty },
+        ],
+      };
     case REMOVE_FROM_CART:
       const productId = action.payload.id;
       return {

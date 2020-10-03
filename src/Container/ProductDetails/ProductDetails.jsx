@@ -49,7 +49,7 @@ const ProductDetails = (props) => {
   };
   const dispatch = useDispatch();
   const handleOnAddToCart = (product) => {
-    dispatch(addToCart(product));
+    dispatch(addToCart(product, qty));
   };
 
   if (!product)
@@ -63,13 +63,13 @@ const ProductDetails = (props) => {
     <div className="productdetails__background">
       <div className="container">
         <div className="row productdetails">
-          <div className="col-lg-1">
+          <div className="col-lg-1 sub_menu">
             <div className="sub_img">
-              <img src="/assets/img/categori/product1.png" alt="" />
-              <img src="/assets/img/categori/product1.png" alt="" />
-              <img src="/assets/img/categori/product1.png" alt="" />
-              <img src="/assets/img/categori/product1.png" alt="" />
-              <img src="/assets/img/categori/product1.png" alt="" />
+              <img src={product.photo} alt="" />
+              <img src={product.photo} alt="" />
+              <img src={product.photo} alt="" />
+              <img src={product.photo} alt="" />
+              <img src={product.photo} alt="" />
             </div>
           </div>
           <div className="col-lg-4">

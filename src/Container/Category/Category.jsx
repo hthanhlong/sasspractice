@@ -5,29 +5,34 @@ import StarHalfIcon from "@material-ui/icons/StarHalf";
 import { Badge } from "@material-ui/core";
 import Pagination from "@material-ui/lab/Pagination";
 import { useDispatch, useSelector } from "react-redux";
-import { getProducts } from "../../ActionTypes/productAction";
+import { getProducts, sortProducts } from "../../ActionTypes/productAction";
 
-const Category = (props) => {
-  const [page, setPage] = useState(1);
-
+const Category = () => {
   const dispatch = useDispatch();
 
-  const products = useSelector((state) => state.products.productList);
+  const [sort, setSort] = useState("");
+  const [page, setPage] = useState(1);
 
-  const { result, totalProducts } = products;
+  const result = useSelector((state) => state.products.productList);
+  const totalProducts1 = useSelector((state) => state.products.totalProducts);
+  const totalPages = Math.ceil(totalProducts1 / 16);
 
-  const totalPages = Math.ceil(totalProducts / 16);
+  const handleChange = async (event, value) => {
+    await setPage(value);
+  };
 
-  const handleChange = (event, value) => {
-    console.log(value);
-    setPage(value);
+  const handleSort = async (event) => {
+    const sortName = event.target.value;
+    await setSort(sortName);
   };
 
   useEffect(() => {
-    if (page) {
-      dispatch(getProducts(page));
-    }
+    dispatch(getProducts(page));
   }, [page]);
+
+  useEffect(() => {
+    dispatch(sortProducts(sort));
+  }, [sort]);
 
   return (
     <div className="products">
@@ -39,15 +44,15 @@ const Category = (props) => {
           <div className="col-lg-10 d-none d-lg-block"></div>
           <div className="col-12 col-sm-12 col col-md-12 col-lg-2 fillter__item">
             <label>Sort by</label>
-            <select>
-              <option value="">Lastest</option>
-              <option value="">New</option>
-              <option value="">Old</option>
+            <select value={sort} onChange={handleSort} className="sort__term">
+              <option value="lastest">Lastest</option>
+              <option value="hightest">Hightest</option>
+              <option value="lowest">Lowest</option>
             </select>
           </div>
         </div>
         <div className="row">
-          <div className="col-lg-3">
+          <div className="d-none d-lg-block col-lg-3">
             <div className="category__left">
               <div className="category__left-content">
                 <div className="category__left-title">
@@ -56,22 +61,22 @@ const Category = (props) => {
                 <div className="category__left-list">
                   <ul>
                     <li>
-                      <Link to="/blog">Resaurant food (37)</Link>
+                      <Link to="/category">Resaurant food (37)</Link>
                     </li>
                     <li>
-                      <Link to="/blog">Travel news (10)</Link>
+                      <Link to="/category">Travel news (10)</Link>
                     </li>
                     <li>
-                      <Link to="/">Modern Technology (03)</Link>
+                      <Link to="/category">Modern Technology (03)</Link>
                     </li>
                     <li>
-                      <Link to="/">Product (12)</Link>
+                      <Link to="/category">Product (12)</Link>
                     </li>
                     <li>
-                      <Link to="/">Inspiration (21)</Link>
+                      <Link to="/category">Inspiration (21)</Link>
                     </li>
                     <li>
-                      <Link to="/">Healthy Care (15)</Link>
+                      <Link to="/category">Healthy Care (15)</Link>
                     </li>
                   </ul>
                 </div>
@@ -85,7 +90,10 @@ const Category = (props) => {
                   <div>Loading...</div>
                 ) : (
                   result.map((item) => (
-                    <div className="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+                    <div
+                      key={item.id}
+                      className="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3"
+                    >
                       <div className="product1">
                         <div className="product1__img">
                           <Link to={`/productdetails/${item.id}`}>

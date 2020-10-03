@@ -94,13 +94,13 @@ const Header = () => {
                 </Badge>
               </li>
               <li>
-                <NavLink to="#">Latest</NavLink>
+                <NavLink to="/category">Latest</NavLink>
                 <ul className="submenu">
                   <li>
-                    <NavLink to="">Products List</NavLink>
+                    <NavLink to="/category">Products List</NavLink>
                   </li>
                   <li>
-                    <NavLink to="">Products Details</NavLink>
+                    <NavLink to="/">Products Details</NavLink>
                   </li>
                 </ul>
               </li>
